@@ -1,0 +1,52 @@
+html{
+    background-color: #708090;
+    
+}
+p{
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    color: aliceblue;
+    text-align: center;
+}
+a{
+    color: aliceblue;
+    text-decoration: none;
+    transition: opacity 150ms;
+}
+a:hover{
+    opacity: 0.5;
+
+}
+img{
+    width: 50px;
+    height: 50px;
+    transition: opacity 150ms, width 150ms, height 150ms;
+}
+
+.Index-Title{
+    font-size: 50px;
+}
+
+.Portfolio-Page-Link{
+    text-decoration: none;
+    color: aliceblue;
+    transition: font-size 150ms, color 150ms;
+    font-weight: bold;
+    margin-bottom: 100px;
+}
+.Portfolio-Page-Link:hover{
+    font-size: 51px;
+    color: white;
+    font-weight: bolder;
+    
+}
+.Title-Portfolio-Links{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.img-Link:hover{
+    opacity: 0.5;
+    width: 52px;
+    height: 52px;
+}
