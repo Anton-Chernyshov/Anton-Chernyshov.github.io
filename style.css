@@ -20,7 +20,8 @@ a:hover{
 img{
     width: 50px;
     height: 50px;
-    transition: opacity 150ms, width 150ms, height 150ms;
+    transition: opacity 150ms, width 150ms, height 150ms, margin 150ms;
+    margin: 5px;
 }
 
 .Index-Title{
@@ -28,16 +29,17 @@ img{
 }
 
 .Portfolio-Page-Link{
+    font-size: 50px;
     text-decoration: none;
     color: aliceblue;
-    transition: font-size 150ms, color 150ms;
+    transition:  opacity 150ms, line-height 150ms, font-size 150ms;
     font-weight: bold;
-    margin-bottom: 100px;
+    line-height: 30px;
 }
 .Portfolio-Page-Link:hover{
-    font-size: 51px;
-    color: white;
-    font-weight: bolder;
+    font-size: 52px;
+    line-height:29px;
+    opacity: 0.5;
     
 }
 .Title-Portfolio-Links{
@@ -49,4 +51,5 @@ img{
     opacity: 0.5;
     width: 52px;
     height: 52px;
+    margin: 4px;
 }
