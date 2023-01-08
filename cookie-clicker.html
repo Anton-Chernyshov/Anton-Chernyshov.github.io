@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+        <link rel="stylesheet" href="style.css">
+        
+</head>
+<script type = "text/javascript">
+    var clicks = 0;
+    var cpc = 1 ;
+    var autoc = 0;
+    var cpcCost = 1;
+    var autocCost = 1000;
+    var upgradecookiecost = 50000;
+    var currentcookie = 0;
+    var cookiemultiplier = 1;
+    const cookies = ["https://purepng.com/public/uploads/large/purepng.com-cookiescookiessnacksbaked-snacksflour-cookieschocolate-cookies-1411527249039ulhcg.png", "https://www.pngmart.com/files/16/Dark-Chocolate-Cookie-PNG-Photos.png", "https://www.nicepng.com/png/full/549-5494003_image-transparent-download-m-cookie-png-chocolate-cookie.png", "https://www.iheartnaptime.net/wp-content/uploads/2022/10/Chocolate-mm-cookies-I-Heart-Naptime-6-857x1200.jpg"]
+    function onClick(){
+        clicks += (cpc*cookiemultiplier);
+        document.getElementById("clicks").innerHTML = clicks;
+    
+    };
+    function purchaceCPC(){
+        if (cpcCost<=clicks){        
+        cpc += 1;
+        clicks -= cpcCost;
+        cpcCost *= 5;
+        document.getElementById("CPC-Counter").innerHTML = cpc;
+        document.getElementById("cpc-Cost").innerHTML = cpcCost;
+        document.getElementById("clicks").innerHTML = clicks;
+        };
+    };
+    function purchaceAutoc(){
+        if (autocCost<=clicks){
+            autoc += 1;
+            clicks -= autocCost;
+            autocCost *= 5;
+            document.getElementById("autoc-Counter").innerHTML = autoc;
+            document.getElementById("clicks").innerHTML = clicks;
+            document.getElementById("Autoc-Cost").innerHTML = autocCost;
+        };
+    };
+
+    function autoclick(){   
+        clicks += ((cpc*cookiemultiplier)*autoc);
+        document.getElementById("clicks").innerHTML = clicks;
+    };
+    function autoclickfunc(){
+        setInterval(function() {autoclick()},  1000);
+        
+    }
+    function upgradecookie(){
+        if (clicks >= upgradecookiecost){
+            currentcookie += 1;
+            clicks = 0;
+            autoclicks = 0;
+            cookiemultiplier *= 15;
+            upgradecookiecost *= 15;
+            document.getElementById("cookie-img").src = cookies[currentcookie]
+            document.getElementById("cookie-multiplier").innerHTML = cookiemultiplier;
+            document.getElementById("Cookie-Upgrade-Cost").innerHTML = upgradecookiecost;
+        }
+    }
+</script>
+<body onload="autoclickfunc()">
+    <p class="Index-Title">
+        <a class="Portfolio-Page-Link" href="games.html">
+            Cookie Clicker
+        </a>
+    </p>
+<div class="cookie" >
+
+<button type = "button" onClick="onClick()" class="cookie-button">
+    <img id = "cookie-img" class = "cookie-image"src = https://purepng.com/public/uploads/large/purepng.com-cookiescookiessnacksbaked-snacksflour-cookieschocolate-cookies-1411527249039ulhcg.png>
+
+</button>
+
+</div>
+
+<div class="counter"> 
+    <p>
+        Cookies:    
+        <a id="clicks">
+            0
+        </a>
+
+    </p>
+
+
+    <p>
+        Cookies per click:  
+        <a id="CPC-Counter">
+            1
+        </a>  
+    </p>
+    <p>
+        Autoclicks per seccond:     
+        <a id="autoc-Counter">
+            0
+        </a>
+    </p>
+    <p>
+        Cookie Upgrade Multiplier:
+        <a id="cookie-multiplier">
+            1
+        </a>
+    </p>
+</div>
+<div class = "store">
+    <p class="Title">
+        Store
+    </p>
+    <button onClick="purchaceCPC()">
+        +1 cookie Per click - 
+        <a id="cpc-Cost">
+            1
+        </a>
+    </button>
+    <br>
+    <button onClick="purchaceAutoc()">
+        Autoclicker (Clicks +1 times/s) -
+        <a id="Autoc-Cost">
+            1000
+        </a>
+    </button>
+    <br>
+    <button onclick="upgradecookie()">
+        Upgrade cookie -
+        <a id="Cookie-Upgrade-Cost">
+            50000
+        </a>
+    </button>
+</div>
+</body>
+</html>
