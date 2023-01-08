@@ -91,6 +91,8 @@ button{
     width:102px;
     height:102px;
     margin-bottom: 18px;
+    cursor: grabbing;
+
 }
 
 .cookie-image:active{
