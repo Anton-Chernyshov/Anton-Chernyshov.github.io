@@ -1,9 +1,10 @@
 html{
     background-color: #708090;
+    font-family: 'Roboto', sans-serif;
+
     
 }
 p{
-    font-family: 'Roboto', sans-serif;
     font-size: 20px;
     color: aliceblue;
     text-align: center;
@@ -28,7 +29,7 @@ img{
     font-size: 50px;
 }
 
-.Portfolio-Page-Link{
+.Page-Link{
     font-size: 50px;
     text-decoration: none;
     color: aliceblue;
@@ -36,7 +37,7 @@ img{
     font-weight: bold;
     line-height: 30px;
 }
-.Portfolio-Page-Link:hover{
+.Page-Link:hover{
     font-size: 52px;
     line-height:29px;
     opacity: 0.5;
@@ -52,4 +53,48 @@ img{
     width: 52px;
     height: 52px;
     margin: 4px;
+}
+
+
+.Games-Title{
+    font-size: 50px;
+}
+.Game-Link{
+    font-size: 40px;
+}
+button{
+    margin-left: auto;
+    margin-right: auto;
+    background: none;
+    border: none;
+    font-family: 'Roboto', sans-serif;
+    color: aliceblue;
+    font-size: 20px;
+}
+.cookie{
+    text-align: center;
+}
+.counter{
+    text-align: center;
+}   
+.store{
+    text-align: center;
+    line-height: 40px;
+}
+.cookie-image{
+    width: 100px;
+    height: 100px; 
+    transition:  width 150ms, height 150ms, margin-bottom 150ms;
+    margin-bottom: 20px;
+}
+.cookie-image:hover{
+    width:102px;
+    height:102px;
+    margin-bottom: 18px;
+}
+
+.cookie-image:active{
+    width: 110px;
+    height: 110px;
+    margin-bottom: 10px;
 }
