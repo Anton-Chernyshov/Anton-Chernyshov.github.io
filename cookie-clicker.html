@@ -7,9 +7,9 @@
 </head>
 <script type = "text/javascript">
     var clicks = 0;
-    var cpc = 1 ;
+    var cpc = 1;
     var autoc = 0;
-    var cpcCost = 1;
+    var cpcCost = 0;
     var autocCost = 100;
     var upgradecookiecost = 50000;
     var currentcookie = 0;
@@ -24,7 +24,7 @@
         if (cpcCost<=clicks){        
         cpc += 1;
         clicks -= cpcCost;
-        cpcCost *= 5;
+        cpcCost += (cpc*10);
         document.getElementById("CPC-Counter").innerHTML = cpc;
         document.getElementById("cpc-Cost").innerHTML = cpcCost;
         document.getElementById("clicks").innerHTML = clicks;
@@ -34,7 +34,7 @@
         if (autocCost<=clicks){
             autoc += 1;
             clicks -= autocCost;
-            autocCost *= 5;
+            autocCost += (cpc*10);
             document.getElementById("autoc-Counter").innerHTML = autoc;
             document.getElementById("clicks").innerHTML = clicks;
             document.getElementById("Autoc-Cost").innerHTML = autocCost;
@@ -54,15 +54,24 @@
             currentcookie += 1;
             clicks = 0;
             autoclicks = 0;
+            cpc = 0;
+            cpcCost = 0;
+            autocCost = 0;
             cookiemultiplier *= 15;
             upgradecookiecost *= 15;
             document.getElementById("cookie-img").src = cookies[currentcookie]
             document.getElementById("cookie-multiplier").innerHTML = cookiemultiplier;
             document.getElementById("Cookie-Upgrade-Cost").innerHTML = upgradecookiecost;
+            document.getElementById("autoc-Counter").innerHTML = autoclicks;
+            document.getElementById("CPC-Counter").innerHTML = cpc;
+            document.getElementById("clicks").innerHTML = clicks;
+            document.getElementById("cpc-cost").innerHTML = cpcCost;
+            document.getElementById("Autoc-Cost").innerHTML = autocCost;
+
         }
     }
 </script>
-<body onload="autoclickfunc()">
+<body onload="autoclickfunc()"> 
     <p class="Index-Title">
         <a class="Portfolio-Page-Link" href="games.html">
             Cookie Clicker
