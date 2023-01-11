@@ -1,0 +1,51 @@
+<head>
+
+<style>
+  body{
+    background-color: #708090;
+    font-family: 'Roboto', sans-serif;
+    color: aliceblue;
+    line-height: 100px;
+    font-size: 100px;
+    
+}
+.button{
+  background-color: #708090;
+  padding: 100px 100px;
+  font-size: 100px;
+  border: none;
+color: aliceblue;
+
+}
+div{
+  text-align: center;
+
+}
+</style>  
+</head>
+<script>
+    function clicc(){
+                document.getElementById("clicc-count").innerHTML = localStorage.clickcount;
+
+
+        if (localStorage.clickcount) {
+  localStorage.clickcount = Number(localStorage.clickcount) + 1;
+} else {
+  localStorage.clickcount = 1;
+
+}
+    }
+    function loaddata(){
+      clickcount -= 1
+      clicc()
+    }   
+    
+</script>
+<body onload="loaddata()">
+  <div>
+    <a id="clicc-count">0</a> 
+  </div>
+<div>
+<button onclick="clicc()" class = "button">Click Me!</button>
+</div>
+</body>
