@@ -6,19 +6,22 @@
         
 </head>
 <script type = "text/javascript">
+
     var clicks = 0;
     var cpc = 1;
-    var autoc = 0;
+    var autoc = 0;  
     var cpcCost = 0;
     var autocCost = 100;
     var upgradecookiecost = 50000;
     var currentcookie = 0;
     var cookiemultiplier = 1;
     const cookies = ["https://purepng.com/public/uploads/large/purepng.com-cookiescookiessnacksbaked-snacksflour-cookieschocolate-cookies-1411527249039ulhcg.png", "https://www.pngmart.com/files/16/Dark-Chocolate-Cookie-PNG-Photos.png", "https://www.nicepng.com/png/full/549-5494003_image-transparent-download-m-cookie-png-chocolate-cookie.png", "https://www.iheartnaptime.net/wp-content/uploads/2022/10/Chocolate-mm-cookies-I-Heart-Naptime-6-857x1200.jpg", "https://www.pngarts.com/files/4/Oreo-PNG-Image-Background.png", "https://cdn.freewebstore.com/origin/1978/mrsfieldswhitechunkmacadamiacookies60gsinglecookiepack1.png", "https://www.kindpng.com/picc/m/233-2338295_red-velvet-cookie-png-transparent-png.png", "https://www.cakepicturegallery.com/d/1735337-1/Picture+of+gingerbread+man+cookies.PNG", "https://c8.alamy.com/comp/D5DF4B/a-mcvities-original-digestive-biscuit-on-a-white-background-D5DF4B.jpg"]
+    
+    
     function onClick(){
         clicks += (cpc*cookiemultiplier);
         document.getElementById("clicks").innerHTML = clicks;
-    
+
     };
     function purchaceCPC(){
         if (cpcCost<=clicks){        
@@ -28,6 +31,7 @@
         document.getElementById("CPC-Counter").innerHTML = cpc;
         document.getElementById("cpc-Cost").innerHTML = cpcCost;
         document.getElementById("clicks").innerHTML = clicks;
+        
         };
     };
     function purchaceAutoc(){
@@ -40,15 +44,29 @@
             document.getElementById("Autoc-Cost").innerHTML = autocCost;
         };
     };
+    function purchaceSuperc(){
+        if (supercCost<=clicks){
+            superc += 1;
+            clicks -= supercCost;
+            superCost += (cpc*10);
+            document.getElementById("superc-counter")
+        }
+    }
 
     function autoclick(){   
+        setInterval(function() {
         clicks += ((cpc*cookiemultiplier)*autoc);
         document.getElementById("clicks").innerHTML = clicks;
+    },  1000);  
     };
-    function autoclickfunc(){
-        setInterval(function() {autoclick()},  1000);
-        
+    function superclick(){
+        setInterval(function() {
+            clicks += ((cpc*cookiemultiplier)*superc);
+            document.getElementById("clicks").innerHTML = clicks;
+        }, 1000);
+
     }
+
     function upgradecookie(){
         if (clicks >= upgradecookiecost){
             currentcookie += 1;
@@ -71,7 +89,7 @@
         }
     }
 </script>
-<body onload="autoclickfunc()"> 
+<body onload="autoclick(), superclick()"> 
     <p class="Index-Title">
         <a class="Portfolio-Page-Link" href="games.html">
             Cookie Clicker
@@ -109,6 +127,12 @@
         </a>
     </p>
     <p>
+        Superclicks per seccond:
+        <a id="superc-counter">
+            0
+        </a>
+    </p>
+    <p>
         Cookie Upgrade Multiplier:
         <a id="cookie-multiplier">
             1
@@ -130,6 +154,13 @@
         Autoclicker (Clicks +1 times/s) -
         <a id="Autoc-Cost">
             100
+        </a>
+    </button>
+    <br>
+    <button onClick="purchaceSuperc()">
+        Superclicker (Clicks +10 times/s) -
+        <a id="Autoc-Cost">
+            10000
         </a>
     </button>
     <br>
