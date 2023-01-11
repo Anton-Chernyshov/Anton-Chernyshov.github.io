@@ -72,9 +72,11 @@
             currentcookie += 1;
             clicks = 0;
             autoclicks = 0;
-            cpc = 0;
+            cpc = 1;
             cpcCost = 0;
             autocCost = 0;
+            superc = 0;
+            supercCost = 0;
             cookiemultiplier *= 15;
             upgradecookiecost *= 15;
             document.getElementById("cookie-img").src = cookies[currentcookie]
@@ -85,6 +87,8 @@
             document.getElementById("clicks").innerHTML = clicks;
             document.getElementById("cpc-cost").innerHTML = cpcCost;
             document.getElementById("Autoc-Cost").innerHTML = autocCost;
+            document.getElementById("cpc-cost").innerHTML = supercCost;
+            document.getElementById("Autoc-Cost").innerHTML = superc;
 
         }
     }
