@@ -50,8 +50,9 @@
         if (supercCost<=clicks){
             superc += 1;
             clicks -= supercCost;
-            supercCost += (cpc*10);
-            document.getElementById("superc-counter")
+            superCost += (cpc*10);
+            document.getElementById("superc-counter").innerHTML = superc;
+            document.getElementById("Superc-cost").innerHTML = supercCost;
         }
     }
 
@@ -77,8 +78,6 @@
             cpc = 1;
             cpcCost = 0;
             autocCost = 0;
-            superc = 0;
-            supercCost = 0;
             cookiemultiplier *= 15;
             upgradecookiecost *= 15;
             document.getElementById("cookie-img").src = cookies[currentcookie]
@@ -89,8 +88,6 @@
             document.getElementById("clicks").innerHTML = clicks;
             document.getElementById("cpc-cost").innerHTML = cpcCost;
             document.getElementById("Autoc-Cost").innerHTML = autocCost;
-            document.getElementById("cpc-cost").innerHTML = supercCost;
-            document.getElementById("Autoc-Cost").innerHTML = superc;
 
         }
     }
@@ -165,7 +162,7 @@
     <br>
     <button onClick="purchaceSuperc()">
         Superclicker (Clicks +10 times/s) -
-        <a id="Autoc-Cost">
+        <a id="Superc-cost">
             10000
         </a>
     </button>
