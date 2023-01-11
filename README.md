@@ -1,3 +1,2 @@
 # Anton-Chernyshov.github.io
-my website because why not
-TEst
+This website has games that can be played on networks with firewalls, as github isnt blocked by them
